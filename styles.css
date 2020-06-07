@@ -1,0 +1,201 @@
+:root {
+	--main-color: hsla(231, 48%, 48%, 1);
+	--bg-color: hsla(203, 52%, 21%, 1);
+	--white: hsla(0, 0%, 100%, 1);
+	--grey: hsla(0, 0%, 40%, 1);
+	--black: hsla(0, 0%, 0%, 1);
+	--neon-blue: hsla(183, 100%, 75%, 1);
+	--neon-green: hsla(111, 100%, 54%, 1);
+	--neon-orange: hsla(39, 100%, 50%, 1);
+	--box-shadow-white: 0 0 15px 0 hsla(0, 0%, 100%, 0.25);
+	--box-shadow-neon-blue: 0 0 15px 0 var(--neon-blue);
+	--box-shadow-neon-green: 0 0 15px 0 var(--neon-green);
+	--text-shadow-neon-blue: 0 0 8px var(--neon-blue);
+	--text-shadow-neon-green: 0 0 8px var(--neon-green);
+	--text-shadow-neon-orange: 0 0 8px var(--neon-orange);
+	--neumorphic-shadow-sm: 2px 2px 2px 0 hsla(0, 0%, 0%, 0.75),
+							-2px -2px 2px 0 hsla(0, 0%, 100%, 0.25);
+	--neumorphic-shadow-sm-inset: inset 2px 2px 2px 0 hsla(0, 0%, 0%, 0.75),
+							inset -2px -2px 2px 0 hsla(0, 0%, 100%, 0.25);
+	--neumorphic-shadow-lg: 2px 2px 8px 0 hsla(0, 0%, 0%, 0.75),
+							-2px -2px 8px 0 hsla(0, 0%, 100%, 0.25);
+	--neumorphic-shadow-lg-inset: inset 2px 2px 8px 0 hsla(0, 0%, 0%, 0.75),
+							inset -2px -2px 8px 0 hsla(0, 0%, 100%, 0.25);
+}
+
+body {
+	margin: 0;
+	background-color: var(--bg-color);
+	font-size: 18px;
+	font-family: 'VT323', sans-serif;
+	color: var(--white);
+}
+
+input {
+	width: 2rem;
+	padding: 0.5rem;
+	background-color: var(--bg-color);
+	color: var(--white);
+	font-family: 'VT323', sans-serif;
+	font-size: 1rem;
+	font-weight: 600;
+	text-align: center;
+	border: 0;
+	border-radius: 0.25rem;
+	box-shadow: var(--neumorphic-shadow-sm-inset);
+}
+
+.align-text--left {
+	text-align: left;
+}
+
+.navbar {
+	background: var(--bg-color);
+	color: var(--white);
+}
+
+.navbar .logo {
+	padding: 0.5rem 1rem;
+	color: var(--bg-color);
+	text-shadow: var(--text-shadow-neon-orange);
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 2.5rem;
+	font-weight: 900;
+}
+
+.game-wrapper {
+	max-width: 1000px;
+    min-width: fit-content;
+    margin: 2rem auto;
+    border-radius: 0.25rem;
+	box-shadow: var(--neumorphic-shadow-lg);
+}
+
+.title {
+	margin: 0;
+	text-align: center;
+}
+
+.rules {
+	text-align: center;
+}
+
+.wrapper {
+	padding: 1rem 2rem;
+}
+
+.best-of-text {
+	margin: 0 2rem;
+	font-weight: 600;
+}
+
+.controls {
+	padding: 2rem 2rem 0.5rem;
+	display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 2rem;
+}
+
+.moves-buttons {
+	display: flex;
+	justify-content: space-around;
+}
+
+.button {
+	margin: 0 0.5rem;
+	padding: 0.5rem;
+    background-color: var(--bg-color);
+    font-family: 'VT323', sans-serif;
+    text-transform: uppercase;
+    box-shadow: var(--neumorphic-shadow-sm);
+    border: 0;
+    border-radius: 0.25rem;
+    color: var(--white);
+	transition: box-shadow 3s ease-in-out;
+}
+
+.button:disabled {
+	color: var(--grey);
+	box-shadow: var(--neumorphic-shadow-sm-inset);
+	transition: box-shadow 3s ease-in-out;
+}
+
+.button--move {
+	flex: 0 0 25%;
+}
+
+.player-boxes {
+	padding: 0.5rem 2rem 2rem;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-column-gap: 2rem;
+}
+
+.box {
+	padding: 2rem 1rem;
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	border-radius: 0.5rem;
+	box-shadow: var(--neumorphic-shadow-lg);
+}
+
+.box.player{
+	box-shadow: var(--box-shadow-neon-blue);
+}
+
+.box.opponent{
+	box-shadow: var(--box-shadow-neon-green);
+}
+
+.box.player, .box.opponent {
+	flex-grow: 1;
+}
+
+.score-wrapper {
+	display: flex;
+	justify-content: space-around;
+}
+
+.score {
+	font-size: 3rem;
+	font-weight: 600;
+}
+
+.move {
+	font-size: 2rem;
+	font-weight: 600;
+}
+
+#player-score, #player-move {
+	color: var(--bg-color);
+	text-shadow: var(--text-shadow-neon-blue)
+}
+
+#opponent-score, #opponent-move {
+	color: var(--bg-color);
+	text-shadow: var(--text-shadow-neon-green);
+}
+
+#winner {
+	margin: 0;
+	color: var(--bg-color);
+	text-shadow: var(--text-shadow-neon-blue);
+	text-align: center;
+	font-size: 2rem;
+	font-weight: 600;
+}
+
+.footer {
+	width: 100%;
+	text-align: center;
+	position: fixed;
+	bottom: 0;
+	color: var(--neon-blue);
+}
+
+.footer a {
+	color: var(--neon-green);
+	text-decoration: none;
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-US">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Rock, Paper, Scissors</title>
+        <meta name="description" content="Simple Rock, Paper, Scissors game to practice vanilla javascript.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Place favicon.ico in the root directory -->
+		<link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <!--[if lte IE 9]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+        <![endif]-->
+		
+		<nav class="navbar">
+			<div class="logo">Rock, Paper, Scissors</div>
+		</nav>
+		<main>
+			<div class="game-wrapper">
+				<div class="wrapper wrapper--intro">
+					<h1 class="title">Let the Games Begin!</h1>
+					<p class="rules"><strong>Rules are simple:</strong> <em>Rock beats Scissor, Scissor beats Paper, Paper beats Rock.</em></p>
+					<p class="best-of-text">Best of <input id="best-of-num" type="number" min="3" value="3" step="2"><span><button id="button--begin" class="button">Begin</button><button id="button--reset" class="button">Reset</button></span></p>
+					<div class="controls">
+						<div class="moves-buttons">
+							<button class="button button--move" data-move="rock">Rock</button>
+							<button class="button button--move" data-move="paper">Paper</button>
+							<button class="button button--move" data-move="scissors">Scissors</button>
+						</div>
+						<div>
+							<h4 id="winner"></h4>
+						</div>
+					</div>
+				</div>
+				<div class="wrapper wrapper--scores">
+					<div class="player-boxes">
+						<div class="box player">
+							<p><span id="player-move" class="move"></span></p>
+						</div>
+						<div class="box scores">
+							<div class="score-wrapper">
+								<span id="player-score" class="score"></span>
+								<span id="opponent-score" class="score"></span>
+							</div>
+						</div>
+						<div class="box opponent">
+							<p><span id="opponent-move" class="move"></span></p>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+		</main>
+		<footer class="footer">
+			<div class="container">
+				<p>Copyright Tim Lisiecki 2020. <a href="https://timlisiecki.com">View My Website!</a> | <a href="#">View code here.</a></p>
+			</div>
+		</footer>
+
+        <script src="main.js"></script>
+    </body>
+</html>
