@@ -11,12 +11,10 @@
 */
 var MOVE_BUTTONS = document.querySelectorAll('.button--move');
 var MOVE_ARR = ['rock', 'paper', 'scissors'];
-var playerScore /* = 0 */; // don't set value until init??
-var opponentScore /* = 0 */; // don't set value until init??
 var bestOfGames = function(x) {
 	return x / 2;
 };
-var selectedMove,playerMoves, opponentMoves, playerCurrentMove, opponentCurrentMove, numOfGames;
+var playerScore, opponentScore, selectedMove,playerMoves, opponentMoves, playerCurrentMove, opponentCurrentMove, numOfGames;
 
 init();
 
@@ -32,30 +30,20 @@ function determineWinner(player, opponent) {
 		case player === 'rock' && opponent === 'scissors':
 			playerScore += 1;
 			document.getElementById('player-score').innerHTML = playerScore;
-			console.log('Player wins!');
-			console.log(playerScore + ' | ' + opponentScore);
 			break;
 		case player === 'scissors' && opponent === 'paper':
 			playerScore += 1;
 			document.getElementById('player-score').innerHTML = playerScore;
-			console.log('Player wins!');
-			console.log(playerScore + ' | ' + opponentScore);
 			break;
 		case player === 'paper' && opponent === 'rock':
 			playerScore += 1;
 			document.getElementById('player-score').innerHTML = playerScore;
-			console.log('Player wins!');
-			console.log(playerScore + ' | ' + opponentScore);
 			break;
 		case player === opponent:
-			console.log('Tie game!');
-			console.log(playerScore + ' | ' + opponentScore);
 			break;
 		default:
 			opponentScore += 1;
 			document.getElementById('opponent-score').innerHTML = opponentScore;
-			console.log('Opponent wins!');
-			console.log(playerScore + ' | ' + opponentScore);
 	}
 }
 
@@ -63,7 +51,6 @@ function handleMoveSelectorClick(e) {
 	selectedMove = e.target.dataset.move;
 	opponentCurrentMove = MOVE_ARR[Math.floor(Math.random() * MOVE_ARR.length)];
 	
-	console.log('My move: ' + selectedMove + ' | Opp move: ' + opponentCurrentMove);
 	document.getElementById('player-move').innerHTML = selectedMove.toUpperCase();
 	document.getElementById('opponent-move').innerHTML = opponentCurrentMove.toUpperCase();
 
@@ -76,7 +63,6 @@ function handleMoveSelectorClick(e) {
 	if(playerScore > bestOfGames(numOfGames) || opponentScore > bestOfGames(numOfGames)) {
 		for(var j = 0; j < MOVE_BUTTONS.length; j++) {
 			MOVE_BUTTONS[j].disabled = true;
-			console.log(MOVE_BUTTONS[j]);
 		}
 
 		if(playerScore > opponentScore) {
@@ -96,9 +82,6 @@ function beginGame() {
 	document.getElementById('best-of-num').disabled = true;
 	document.getElementById('button--begin').disabled = true;
 	document.getElementById('button--reset').disabled = false;
-	
-	console.log(numOfGames);
-	console.log(bestOfGames(numOfGames));
 
 	for(var i = 0; i < MOVE_BUTTONS.length; i++) {
 		MOVE_BUTTONS[i].disabled = false;
