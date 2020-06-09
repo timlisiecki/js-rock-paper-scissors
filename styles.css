@@ -65,6 +65,7 @@ input {
 	text-transform: uppercase;
 	font-size: 4.5rem;
 	font-weight: 900;
+	animation: blink 1.25s ease-in infinite;
 }
 
 .game-wrapper {
@@ -190,12 +191,14 @@ input {
 
 #player-score, #player-move {
 	color: var(--bg-color);
-	text-shadow: var(--text-shadow-neon-blue)
+	text-shadow: var(--text-shadow-neon-blue);
+	animation: 1s ease-in-out fade-in; 
 }
 
 #opponent-score, #opponent-move {
 	color: var(--bg-color);
 	text-shadow: var(--text-shadow-neon-green);
+	animation: 1s ease-in-out fade-in; 
 }
 
 #winner {
@@ -218,4 +221,28 @@ input {
 .footer a {
 	color: var(--neon-green);
 	text-decoration: none;
+}
+
+@keyframes fade-in {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+@keyframes blink {
+	0% {
+		opacity: 0;
+	}
+
+	75% {
+		opacity: 1;
+	}
+
+	100% {
+		opacity: 0;
+	}
 }
